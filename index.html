@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Happy Birthday Ritu!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);
+      color: #333;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .step {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.5s ease;
+      width: 100%;
+      max-width: 500px;
+    }
+    .step.active {
+      display: block;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #d81b60;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, .1);
+      animation: lighting 1.5s infinite alternate;
+      margin-bottom: 20px;
+    }
+    @keyframes lighting {
+      0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+      100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+    }
+    .shayari {
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 10px 0;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+    .next-btn {
+      padding: 12px 25px;
+      background: #d81b60;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all .3s ease;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(216, 27, 96, .4);
+    }
+    .next-btn:hover {
+      background: #c2185b;
+      transform: translateY(-2px);
+    }
+    .balloons {
+      width: 100%;
+      height: auto;
+      background: url('happy-birthday-gif-animation-fireworks.gif') center/cover no-repeat;
+      margin: 20px 0;
+    }
+    .cake {
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
+      border-radius: 12px;
+    }
+    .proposal img,
+    .memory {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      border-radius: 10px;
+      display: block;
+    }
+    textarea {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      resize: vertical;
+      border: 1px solid #ccc;
+    }
+    div img {
+      width: 90%;
+    }
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 3rem;
+      }
+      .shayari {
+        font-size: 1.4rem;
+      }
+      .next-btn {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Step 1 -->
+  <div class="step active" id="step1">
+    <h1>Happy Birthday Ritu!</h1>
+    <p class="shayari">"Khushbu ban ke mehka karenge tumhe,</p>
+    <p class="shayari">Roshni ban ke chamakenge tumhare aas paas,</p>
+    <p class="shayari">Wada hai tumse zindagi bhar ka,</p>
+    <p class="shayari">Janamdin tumhara banayenge khaas!"</p>
+    <div class="pic">
+      <img src="happy-birthday-gif-animation-fireworks.gif" alt="">
+    </div>
+    <button class="next-btn" id="nextStep1">Next Step</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="step2">
+    <h1>🎂 Cake Cutting Time! 🎉</h1>
+    <img src="cake  cut.gif" alt="Cake" class="cake" />
+    <img src="happy birthday my love.gif" alt="Cake" class="cake" />
+    <div class="balloons"></div>
+    <button class="next-btn" id="nextStep2">Next Step</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="step3">
+    <h1>💍 Proposal Time! 💖</h1>
+    <div class="proposal">
+      <img src="ChatGPT Image Jul 26, 2025, 09_37_13 PM.png" alt="Proposal Image 1" />
+      <img src="ChatGPT Image Jul 26, 2025, 09_37_19 PM.png" alt="Proposal Image 2" />
+      <img src="ChatGPT Image Jul 26, 2025, 09_37_23 PM.png" alt="Proposal Image 3" />
+      <p>Ritu, will you be mine forever?</p>
+    </div>
+    <button class="next-btn" id="nextStep3">Next Step</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="step4">
+    <h1>🌟 Hamari Yaadein 🌟</h1>
+    <p>Yeh raha hamara kuch khaas pal!</p>
+    <img src="photo8.jpg" alt="Memory 1" class="memory" />
+    <img src="photo3.jpg" alt="Memory 2" class="memory" />
+    <img src="photo4.jpg" alt="Memory 3" class="memory" />
+    <button class="next-btn" id="nextStep4">Next Step</button>
+  </div>
+
+  <!-- Step 5 -->
+  <div class="step" id="step5">
+    <h1>✉️ Aapka Message</h1>
+    <p>Kripya apna message yahan likhein:</p>
+    <textarea id="userMessage" rows="4" placeholder="Aapka message yahan..."></textarea>
+    <button class="next-btn" id="sendMessage">Send Message</button>
+  </div>
+
+  <!-- 🎵 Background Song -->
+  <audio id="birthdaySong" src="happy birthday song.mp3" autoplay loop></audio>
+
+  <script>
+    window.onload = function () {
+      const song = document.getElementById('birthdaySong');
+      song.muted = false;
+      const playPromise = song.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log("Music started");
+        }).catch(error => {
+          console.warn("Autoplay blocked, trying on user interaction...");
+          document.body.addEventListener('click', () => {
+            song.play();
+          }, { once: true });
+        });
+      }
+    };
+
+    document.getElementById('nextStep1').addEventListener('click', function () {
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step2').classList.add('active');
+    });
+
+    document.getElementById('nextStep2').addEventListener('click', function () {
+      document.getElementById('step2').classList.remove('active');
+      document.getElementById('step3').classList.add('active');
+    });
+
+    document.getElementById('nextStep3').addEventListener('click', function () {
+      document.getElementById('step3').classList.remove('active');
+      document.getElementById('step4').classList.add('active');
+    });
+
+    document.getElementById('nextStep4').addEventListener('click', function () {
+      document.getElementById('step4').classList.remove('active');
+      document.getElementById('step5').classList.add('active');
+    });
+
+    document.getElementById('sendMessage').addEventListener('click', function () {
+      const message = document.getElementById('userMessage').value.trim();
+      if (message) {
+        alert('Your message has been sent to sv873234@gmail.com: ' + message);
+      } else {
+        alert('Please write a message before sending.');
+      }
+    });
+  </script>
+</body>
+</html>
